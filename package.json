@@ -1,0 +1,28 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "app that allows users to enter the name of a burger and then allows them to devour it.",
+  "main": "index.js",
+  "scripts": {
+    "test": "burger"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naeNae15232/burger.git"
+  },
+  "keywords": [
+    "burger",
+    "app"
+  ],
+  "author": "Jenae Studer-Hart",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/naeNae15232/burger/issues"
+  },
+  "homepage": "https://github.com/naeNae15232/burger#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.16.0"
+  }
+}
