@@ -11,14 +11,17 @@ router.get("/", function(req, res) {
     var hbsObject = {
       burgers: data
     };
-    console.log(hbsObject + "all burgers");
+    console.log(hbsObject);
     res.render("index", hbsObject);
   });
 });
 
-router.post("/api/burgers", function(req, res) {
-  burger.create(["burger_name"][req.body.burger_name], function(result) {
+router.post("/api/burgers/", function(req, res) {
+  burger.create(
+      ["burger_name"]
+      [req.body.burger_name], function(result) {
     // Send back the ID of the new quote
+    console.log(result.burger_name);
     res.json({ id: result.insertId });
   });
 });
