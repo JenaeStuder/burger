@@ -1,40 +1,50 @@
 <h1>BURGERS!</h1>
+<div class="container" <h2>I know you are hungry, start devouring!</h2>
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Burgers!</h3>
+      <ul>
+        {{#each burgers}}
+        {{#unless this.devoured}}
+        <li>
+          {{this.id}}.{{this.burger_name}}
 
-<h2>I know you are hungry, start devouring!</h2>
-<div class ="row">
-<ul>
-  {{#each burgers}}
-    {{#unless this.devoured}}
-      {{this.burger_name}}
-      <div>
-              <form 
-              {{!-- action="/burgers/{{this.id}}?_method=PUT" --}}
-               method="POST">
-                <button type="submit" class='undevoured'> Devour the {{burger_name}}</button>
-              </form>
-            </div>
-    {{/unless}}
-  {{/each}}
-</ul>
+          <form action="/{{this.id}}?_method=PUT" method="POST">
+            <input type="hidden" name "devoured" value="true">
+            <button type="submit" class='undevoured'> Devour the {{burger_name}}</button>
+          </form>
 
-<h2>Burgers devoured!</h2>
+        </li>
 
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{this.burger_name}}
-    {{/if}}
-  {{/each}}
-</ul>
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+    <div class="col-sm-4">
+      <h3>Burgers devoured!</h3>
 
-<h2>Add a Burger</h2>
-<form class="create-form" action="/burgers" method= "POST">
+      <ul>
+        {{#each burgers}}
+        {{#if devoured}}
+        <li>
+        {{this.id}}.{{this.burger_name}}
+        </li>
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+    <div class="col-sm-4">
+      <h3>Add a Burger</h3>
 
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="burger_name">
+      <form class="create-form" action="/" method="POST">
+
+        <div class="form-group">
+          <label for="ca">Burger Name:</label>
+          <input type="text" id="ca" name="burger_name">
+        </div>
+
+        <button type="submit">Add a Burger</button>
+      </form>
+    </div>
   </div>
-
-  <button type="submit">Add a Burger</button>
-</form>
 </div>

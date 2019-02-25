@@ -65,10 +65,12 @@ var orm = {
   },
   
   updateOne: function(table, objColVals, condition, cb) {
+    var boolean = boolean ? false: true;
+    objColVals = boolean;
     var queryString = "UPDATE " + table;
 
     queryString += " SET ";
-    queryString += objToSql(objColVals);
+    queryString += "devoured=" + objColVals;
     queryString += " WHERE ";
     queryString += condition;
 
