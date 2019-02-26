@@ -1,8 +1,12 @@
+<div class="container" >
+
+
 <h1>BURGERS!</h1>
-<div class="container" <h2>I know you are hungry, start devouring!</h2>
+
+<h2>Welcome to your new favorite burger joint. Simply choose to devour one of our amazing burgers, or feel free to create your own. Don't worry if you can't remember what you last ate, we'll keep track of that for you. Eat up and start devouring!!</h2>
   <div class="row">
     <div class="col-sm-4">
-      <h3>Burgers!</h3>
+      <h3>Burger Choices</h3>
       <ul>
         {{#each burgers}}
         {{#unless this.devoured}}
@@ -11,7 +15,7 @@
 
           <form action="/{{this.id}}?_method=PUT" method="POST">
             <input type="hidden" name "devoured" value="true">
-            <button type="submit" class='undevoured'> Devour the {{burger_name}}</button>
+            <button type="submit" class='devbtn'> Devour the {{burger_name}}</button>
           </form>
 
         </li>
@@ -21,7 +25,7 @@
       </ul>
     </div>
     <div class="col-sm-4">
-      <h3>Burgers devoured!</h3>
+      <h3>Burgers that have been devoured!</h3>
 
       <ul>
         {{#each burgers}}
@@ -34,7 +38,7 @@
       </ul>
     </div>
     <div class="col-sm-4">
-      <h3>Add a Burger</h3>
+      <h3>Add your own burger!!!!</h3>
 
       <form class="create-form" action="/" method="POST">
 
@@ -43,7 +47,7 @@
           <input type="text" id="ca" name="burger_name">
         </div>
 
-        <button type="submit">Add a Burger</button>
+        <button class = "devbtn" type="submit">Add a Burger</button>
       </form>
     </div>
   </div>

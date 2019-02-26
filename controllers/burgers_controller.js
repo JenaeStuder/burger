@@ -20,7 +20,7 @@ router.post("/", function (req, res) {
   burger.insertOne([
       "burger_name"
   ], [
-          req.body.name
+          req.body.burger_name
       ], function () {
           res.redirect("/");
       });
