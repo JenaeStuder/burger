@@ -1,17 +1,21 @@
 <div class="container" >
 
-
-<h1>BURGERS!</h1>
-
-<h2>Welcome to your new favorite burger joint. Simply choose to devour one of our amazing burgers, or feel free to create your own. Don't worry if you can't remember what you last ate, we'll keep track of that for you. Eat up and start devouring!!</h2>
+<div class ='row' id='header'>
+<div class= 'col-md-3'></div>
+<div class='col-md-7'>
+<h1>Jenae's Diner!</h1>
+</div>
+<div class= 'col-md-2'></div>
+<h2>Welcome to your new favorite burger joint. Simply choose to devour one of our amazing burgers, or feel free to create your own. Don't worry if you can't remember what you last ate, we'll keep track of that for you. What'll you have?</h2>
   <div class="row">
-    <div class="col-sm-4">
-      <h3>Burger Choices</h3>
-      <ul>
+    <div class="col-sm-4"  id='classics'>
+      <h3>Burger Classics</h3>
+      <ulstyl e="list-style-type:circle;">
         {{#each burgers}}
         {{#unless this.devoured}}
         <li>
-          {{this.id}}.{{this.burger_name}}
+          
+          {{this.burger_name}}
 
           <form action="/{{this.id}}?_method=PUT" method="POST">
             <input type="hidden" name "devoured" value="true">
@@ -25,30 +29,30 @@
       </ul>
     </div>
     <div class="col-sm-4">
-      <h3>Burgers that have been devoured!</h3>
-
-      <ul>
-        {{#each burgers}}
-        {{#if devoured}}
-        <li>
-        {{this.id}}.{{this.burger_name}}
-        </li>
-        {{/if}}
-        {{/each}}
-      </ul>
-    </div>
-    <div class="col-sm-4">
-      <h3>Add your own burger!!!!</h3>
+      <h3>Create Your Own</h3>
 
       <form class="create-form" action="/" method="POST">
 
         <div class="form-group">
-          <label for="ca">Burger Name:</label>
+          <label for="ca">What's it called?</label>
           <input type="text" id="ca" name="burger_name">
         </div>
 
-        <button class = "devbtn" type="submit">Add a Burger</button>
+        <button class = "devbtn" type="submit">Add it to the menu</button>
       </form>
+    </div>
+    <div class="col-sm-4">
+      <h3>Added to your tab</h3>
+
+      <ul style="list-style-type:circle;">
+        {{#each burgers}}
+        {{#if devoured}}
+        <li>
+       {{this.burger_name}}
+        </li>
+        {{/if}}
+        {{/each}}
+      </ul>
     </div>
   </div>
 </div>

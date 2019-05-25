@@ -1,15 +1,30 @@
 /* font-family: 'Mogra', cursive;
 font-family: 'Caveat Brush', cursive;
 font-family: 'Shadows Into Light', cursive; */
-h1{
+body{
+    background-image: url('../img/diner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+#header{
     font-family: 'Mogra', cursive; 
+    color: white;
+    align-content: center;
+    margin-top: 5%;
+    padding:2%;
+    background-color:rgb(154, 141, 174, .8);
+    border-radius: 5%;
 }
 h2{
     font-family: 'Mogra', cursive; 
     font-size: 100%;
+    color:white;
 }
 h3{
     font-family: 'Caveat Brush', cursive;
+    font-size: 50px;
 }
 .undevoured{
     font-family: 'Shadows Into Light', cursive;
@@ -23,5 +38,21 @@ ul{
 }
 .devbtn{
     font-family: 'Shadows Into Light', cursive;
-    font-size: 70%;
+    font-size: 90%;
+    background-color:rgb(136, 132, 178, .8);
+    border-radius: 10%;
+    color:white;
+    padding:2%;
+    margin-left:10%;
+}
+/* #classics{
+    background-color: rgb(255, 255, 255, .4);
+    border-radius: 2%;
+   
+} */
+label{
+    font-family: 'Mogra', cursive;  
+}
+input{
+    border-radius:3%;
 }
